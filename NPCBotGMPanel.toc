@@ -1,0 +1,6 @@
+## Interface: 30300
+## Title: NPCBotGMPanel
+## Notes: Panel GM para buscar, invocar y borrar NPC Bots.
+## Author: Lleguito
+## Version: 1.0
+NPCBotGMPanel.lua
