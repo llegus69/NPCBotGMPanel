@@ -19,6 +19,11 @@ local function isValidBotScriptName(scriptName)
 end
 
 function NpcBotCommands.OnCommandHandler(event, player, command, chatHandler)
+    -- CONTROL DE SEGURIDAD: Si no hay jugador (ej. comando de consola), ignorar.
+    if not player then
+        return true
+    end
+
     local target = player:GetSelection()
     local scriptName = nil  -- Initialize to nil
 
@@ -274,6 +279,11 @@ local Bullets = {
 
 
 local function OnBotCommandHandlerTwo(event, player, command)
+    -- CONTROL DE SEGURIDAD: Evita que crasheé si el comando no proviene de un jugador real.
+    if not player or not command then
+        return true
+    end
+
     local args = {}
     for word in command:gmatch("%w+") do table.insert(args, word) end
     if args[1] ~= "bot" or args[2] ~= "items" then
