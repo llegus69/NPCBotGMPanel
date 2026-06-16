@@ -174,7 +174,7 @@ SpawnButton:SetPoint("LEFT", EditBox, "RIGHT", 10, 0)
 SpawnButton:SetScript("OnClick", function()
     local botID = EditBox:GetText()
     if botID and botID ~= "" then
-        SendChatMessage(".npcb spawn " .. botID, "SAY")
+        SendChatMessage(".npcbot spawn " .. botID, "SAY")
         EditBox:SetText("")
         EditBox:ClearFocus()
     else
@@ -186,7 +186,7 @@ local DeleteButton = CreateFrame("Button", nil, Panel, "UIPanelButtonTemplate")
 DeleteButton:SetSize(75, 25)
 DeleteButton:SetPoint("LEFT", SpawnButton, "RIGHT", 5, 0)
 DeleteButton:SetScript("OnClick", function()
-    SendChatMessage(".npcb delete", "SAY")
+    SendChatMessage(".npcbot delete", "SAY")
 end)
 
 local EquipServiceButton = CreateFrame("Button", nil, Panel, "UIPanelButtonTemplate")
